@@ -121,6 +121,10 @@ Prefab:
       propertyPath: camera
       value: 
       objectReference: {fileID: 1808237322}
+    - target: {fileID: 11400000, guid: c47acb1bcc04ce44b9d0a38497acc0f2, type: 2}
+      propertyPath: leverDush
+      value: 
+      objectReference: {fileID: 1245033223}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c47acb1bcc04ce44b9d0a38497acc0f2, type: 2}
   m_RootGameObject: {fileID: 1394407438}
@@ -236,7 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 1808237322}
   floor: {fileID: 11400000, guid: 77e17bade62f7a44897014c36ef9ef27, type: 2}
-  charaMove: {fileID: 1245033223}
+  leverDush: {fileID: 1245033223}
 --- !u!4 &1394407440
 Transform:
   m_ObjectHideFlags: 0
@@ -261,7 +265,6 @@ GameObject:
   - 124: {fileID: 1808237320}
   - 81: {fileID: 1808237319}
   - 114: {fileID: 1808237318}
-  - 114: {fileID: 1808237324}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -347,19 +350,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &1808237324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1808237317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6846cb0941e2b264691bf2a159ee74cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floorControl: {fileID: 0}
-  charaMove: {fileID: 0}
 --- !u!1001 &1920080278
 Prefab:
   m_ObjectHideFlags: 0

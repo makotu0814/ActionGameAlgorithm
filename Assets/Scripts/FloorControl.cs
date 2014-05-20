@@ -6,7 +6,7 @@ public class FloorControl : MonoBehaviour
 {
     public Camera camera;
     public Floor floor;
-    public CharacterMove charaMove;
+    public ButtonDushMan buttonDush;
 
     private int num = 3;
     private int index = 0;
@@ -39,7 +39,7 @@ public class FloorControl : MonoBehaviour
 
     private void SetCharaOnFloor()
     {
-        charaMove.SetPosition(new Vector3(0.0f, -Camera.main.orthographicSize + floor.GetHeight() + charaMove.GetHeight() / 2));
+        buttonDush.SetPosition(new Vector3(0.0f, -Camera.main.orthographicSize + floor.GetHeight() + buttonDush.GetHeight() / 2));
     }
 
     private void CreateFloors()

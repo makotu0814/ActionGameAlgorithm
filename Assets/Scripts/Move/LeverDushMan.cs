@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharacterMove : MonoBehaviour
+public class LeverDushMan : MonoBehaviour
 {
     public Camera Cam;
-    public GameObject Tile;
 
     private float accel = 0.01f;
     private float maxSpeed = 1.0f;
