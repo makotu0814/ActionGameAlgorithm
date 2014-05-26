@@ -12,6 +12,7 @@ public class DoubleLeverDush : Dush {
     private float dashSpeed = 0.5f;
     private float downRate = 0.5f;
 
+
     void Update()
     {
         if (Dash)
