@@ -10,6 +10,6 @@ public class Dush : MonoBehaviour {
 
     public float GetHeight()
     {
-        return GetComponent<BoxCollider>().size.y;
+        return GetComponent<BoxCollider2D>().size.y;
     }
 }

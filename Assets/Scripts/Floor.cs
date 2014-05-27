@@ -13,7 +13,7 @@ public class Floor : MonoBehaviour
 
     void Awake()
     {
-        size = tile.GetComponent<BoxCollider>().size.x * transform.localScale.x;
+        size = tile.GetComponent<BoxCollider2D>().size.x * transform.localScale.x;
         width = size * num;
 
         height = 1 / Camera.main.aspect * width;
@@ -40,6 +40,6 @@ public class Floor : MonoBehaviour
 
     public float GetHeight()
     {
-       return tile.GetComponent<BoxCollider>().size.y;
+       return tile.GetComponent<BoxCollider2D>().size.y;
     }
 }

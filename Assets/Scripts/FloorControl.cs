@@ -7,6 +7,7 @@ public class FloorControl : MonoBehaviour
     public Camera camera;
     public Floor floor;
     public Dush dush;
+    public Item item;
 
     private int num = 3;
     private int index = 0;
@@ -14,6 +15,8 @@ public class FloorControl : MonoBehaviour
     private float distance = 0.0f;
     private Vector3 oldCameraPos;
     private List<Floor> floors = new List<Floor>();
+    private List<Item> items = new List<Item>();
+    private Vector3 oldItemPos;
 
     void Start()
     {
@@ -32,8 +35,11 @@ public class FloorControl : MonoBehaviour
             Floor floor = floors[index++ % floors.Count];
             floor.transform.localPosition += new Vector3(width, 0.0f, 0.0f);
 
+            SetItemOnFloor(floor);
+
             distance = 0.0f;
         }
+
         oldCameraPos = camera.transform.position;
     }
 
@@ -52,6 +58,37 @@ public class FloorControl : MonoBehaviour
             width += floorObj.GetWidth();
 
             floors.Add(floorObj);
+
+            if (i != 0)
+            {
+                SetItemOnFloor(floorObj);
+            }
+        }
+    }
+
+    private void SetItemOnFloor(Floor floor)
+    {
+        if (item != null)
+        {
+            RemoveOldItems(floor);
+
+            Item itemObj = Instantiate(item) as Item;
+            itemObj.transform.parent = floor.transform;
+            itemObj.transform.localPosition = new Vector2(Random.Range(-floor.GetWidth() / 2 + itemObj.GetWidth() / 2, floor.GetWidth() / 2 - itemObj.GetWidth() / 2), -Camera.main.orthographicSize + floor.GetHeight() + itemObj.GetHeight() / 2);
+            items.Add(itemObj);
+        }
+    }
+
+
+    private void RemoveOldItems(Floor floor)
+    {
+        foreach (Transform child in floor.transform)
+        {
+            if (child.GetComponent<Item>() != null)
+            {
+                items.Remove(child.GetComponent<Item>());
+                Destroy(child.gameObject);
+            }
         }
     }
 }
