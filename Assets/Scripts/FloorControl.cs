@@ -40,6 +40,18 @@ public class FloorControl : MonoBehaviour
             distance = 0.0f;
         }
 
+        for (int i = 0; i < items.Count; i++)
+        {
+            Item item = items[i];
+
+            if (CheckHit(dush, item))
+            {
+                ((SpeedUpItemDush)dush).SetSpeedUpTime(item.useTime);
+
+                RemoveItem(item);
+            }
+        }
+
         oldCameraPos = camera.transform.position;
     }
 
@@ -86,9 +98,35 @@ public class FloorControl : MonoBehaviour
         {
             if (child.GetComponent<Item>() != null)
             {
-                items.Remove(child.GetComponent<Item>());
-                Destroy(child.gameObject);
+                RemoveItem(child.GetComponent<Item>());
             }
         }
+    }
+
+    private void RemoveItem(Item item)
+    {
+        items.Remove(item);
+        Destroy(item.gameObject);
+    }
+
+    private bool CheckHit(Dush dushMan, Item item)
+    {
+        float man_left = dushMan.transform.position.x - dushMan.GetWidth() / 2;
+        float man_right = dushMan.transform.position.x + dushMan.GetWidth() / 2;
+        float man_top = dushMan.transform.position.y + dushMan.GetHeight() / 2;
+        float man_buttom = dushMan.transform.position.y - dushMan.GetHeight() / 2;
+
+        float item_left = item.transform.position.x - item.GetWidth() / 2;
+        float item_right = item.transform.position.x + item.GetWidth() / 2;
+        float item_top = item.transform.position.y + item.GetHeight() / 2;
+        float item_buttom = item.transform.position.y - item.GetHeight() / 2;
+
+        if ((man_right > item_left) && (man_left < item_right))
+        {
+            if ((man_buttom < item_top) && (man_top > item_buttom)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

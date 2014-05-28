@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Item : MonoBehaviour
 {
+    public float useTime = 60;
 
     public float GetWidth()
     {

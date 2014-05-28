@@ -12,4 +12,9 @@ public class Dush : MonoBehaviour {
     {
         return GetComponent<BoxCollider2D>().size.y;
     }
+
+    public float GetWidth()
+    {
+        return GetComponent<BoxCollider2D>().size.x;
+    }
 }
