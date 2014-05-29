@@ -129,4 +129,9 @@ public class FloorControl : MonoBehaviour
         }
         return false;
     }
+
+    public float GetScreenWidth()
+    {
+        return floors[0].GetWidth();
+    }
 }

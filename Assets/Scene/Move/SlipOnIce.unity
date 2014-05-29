@@ -83,11 +83,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 412997478}
   - 212: {fileID: 412997477}
-  - 61: {fileID: 412997479}
   - 61: {fileID: 412997476}
   - 114: {fileID: 412997475}
   m_Layer: 0
-  m_Name: SpeedUpItemMan
+  m_Name: SlipOnIceMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,14 +100,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 412997474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b83772e7663a8a4eb51389a33de7d88, type: 3}
+  m_Script: {fileID: 11500000, guid: 9930acabdbf2f004e847d10a50c90c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &412997476
 BoxCollider2D:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 6100000, guid: 0a0e8b438ecfb2f46bf665fd274b344b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1432544414}
   m_GameObject: {fileID: 412997474}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -135,7 +135,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300000, guid: f7cded74828b5fc4a8335b2250e64799, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -150,18 +150,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!61 &412997479
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6100000, guid: 0a0e8b438ecfb2f46bf665fd274b344b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1432544414}
-  m_GameObject: {fileID: 412997474}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: 2.55999994, y: 2.55999994}
-  m_Center: {x: 0, y: 0}
 --- !u!1001 &442166719
 Prefab:
   m_ObjectHideFlags: 0
@@ -220,11 +208,11 @@ Prefab:
     - target: {fileID: 11400000, guid: c47acb1bcc04ce44b9d0a38497acc0f2, type: 2}
       propertyPath: dush
       value: 
-      objectReference: {fileID: 412997475}
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: c47acb1bcc04ce44b9d0a38497acc0f2, type: 2}
-      propertyPath: item
+      propertyPath: floor
       value: 
-      objectReference: {fileID: 11400000, guid: f95b6cdbd923ab047b591b41f423718b,
+      objectReference: {fileID: 11400000, guid: c02fc6720fa2ca14c94f73dec6dc52e0,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c47acb1bcc04ce44b9d0a38497acc0f2, type: 2}
@@ -260,9 +248,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 1808237322}
-  floor: {fileID: 11400000, guid: 77e17bade62f7a44897014c36ef9ef27, type: 2}
-  dush: {fileID: 412997475}
-  item: {fileID: 11400000, guid: f95b6cdbd923ab047b591b41f423718b, type: 2}
+  floor: {fileID: 11400000, guid: c02fc6720fa2ca14c94f73dec6dc52e0, type: 2}
+  dush: {fileID: 0}
+  item: {fileID: 0}
 --- !u!4 &1394407440
 Transform:
   m_ObjectHideFlags: 0
@@ -309,16 +297,11 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 21200000, guid: 0a0e8b438ecfb2f46bf665fd274b344b, type: 2}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 0a0e8b438ecfb2f46bf665fd274b344b, type: 2}
       propertyPath: m_Name
-      value: SpeedUpItemMan
+      value: SlipOnIceMan
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 0}
     - {fileID: 11400000, guid: 0a0e8b438ecfb2f46bf665fd274b344b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a0e8b438ecfb2f46bf665fd274b344b, type: 2}
   m_RootGameObject: {fileID: 412997474}
