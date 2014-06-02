@@ -86,7 +86,7 @@ GameObject:
   - 61: {fileID: 412997476}
   - 114: {fileID: 412997475}
   m_Layer: 0
-  m_Name: SlipOnIceMan
+  m_Name: SwimmingMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,10 +100,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 412997474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9930acabdbf2f004e847d10a50c90c16, type: 3}
+  m_Script: {fileID: 11500000, guid: f5b78f27e96d8c7409a4a66ceac87000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorCtrl: {fileID: 1394407439}
 --- !u!61 &412997476
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -209,7 +208,7 @@ Prefab:
     - target: {fileID: 11400000, guid: c47acb1bcc04ce44b9d0a38497acc0f2, type: 2}
       propertyPath: dush
       value: 
-      objectReference: {fileID: 412997475}
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: c47acb1bcc04ce44b9d0a38497acc0f2, type: 2}
       propertyPath: floor
       value: 
@@ -250,7 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 1808237322}
   floor: {fileID: 11400000, guid: c02fc6720fa2ca14c94f73dec6dc52e0, type: 2}
-  dush: {fileID: 412997475}
+  dush: {fileID: 0}
   item: {fileID: 0}
 --- !u!4 &1394407440
 Transform:
@@ -300,7 +299,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 0a0e8b438ecfb2f46bf665fd274b344b, type: 2}
       propertyPath: m_Name
-      value: SlipOnIceMan
+      value: SwimmingMan
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400000, guid: 0a0e8b438ecfb2f46bf665fd274b344b, type: 2}

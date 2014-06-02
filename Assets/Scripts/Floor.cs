@@ -33,12 +33,17 @@ public class Floor : MonoBehaviour
         }
     }
 
-    public float GetWidth()
+    public float GetScreenwWidth()
     {
         return width;
     }
 
-    public float GetHeight()
+    public float GetScreenHeight()
+    {
+        return height;
+    }
+
+    public float GetFloorHeight()
     {
        return tile.GetComponent<BoxCollider2D>().size.y;
     }

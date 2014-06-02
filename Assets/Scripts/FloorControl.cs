@@ -55,19 +55,19 @@ public class FloorControl : MonoBehaviour
         oldCameraPos = camera.transform.position;
     }
 
-    private void SetCharaOnFloor()
+    protected virtual void SetCharaOnFloor()
     {
-        dush.SetPosition(new Vector3(0.0f, -Camera.main.orthographicSize + floor.GetHeight() + dush.GetHeight() / 2));
+        dush.SetPosition(new Vector3(0.0f, -Camera.main.orthographicSize + floor.GetFloorHeight() + dush.GetHeight() / 2));
     }
 
-    private void CreateFloors()
+    protected virtual void CreateFloors()
     {
         for (int i = 0; i < num; i++)
         {
             Floor floorObj = Instantiate(floor) as Floor;
             floorObj.transform.parent = transform;
-            floorObj.transform.localPosition = new Vector3(floorObj.GetWidth() * i, 0.0f, 0.0f);
-            width += floorObj.GetWidth();
+            floorObj.transform.localPosition = new Vector3(floorObj.GetScreenwWidth() * i, 0.0f, 0.0f);
+            width += floorObj.GetScreenwWidth();
 
             floors.Add(floorObj);
 
@@ -78,7 +78,7 @@ public class FloorControl : MonoBehaviour
         }
     }
 
-    private void SetItemOnFloor(Floor floor)
+    protected virtual void SetItemOnFloor(Floor floor)
     {
         if (item != null)
         {
@@ -86,13 +86,13 @@ public class FloorControl : MonoBehaviour
 
             Item itemObj = Instantiate(item) as Item;
             itemObj.transform.parent = floor.transform;
-            itemObj.transform.localPosition = new Vector2(Random.Range(-floor.GetWidth() / 2 + itemObj.GetWidth() / 2, floor.GetWidth() / 2 - itemObj.GetWidth() / 2), -Camera.main.orthographicSize + floor.GetHeight() + itemObj.GetHeight() / 2);
+            itemObj.transform.localPosition = new Vector2(Random.Range(-floor.GetScreenwWidth() / 2 + itemObj.GetWidth() / 2, floor.GetScreenwWidth() / 2 - itemObj.GetWidth() / 2), -Camera.main.orthographicSize + floor.GetFloorHeight() + itemObj.GetHeight() / 2);
             items.Add(itemObj);
         }
     }
 
 
-    private void RemoveOldItems(Floor floor)
+    protected virtual void RemoveOldItems(Floor floor)
     {
         foreach (Transform child in floor.transform)
         {
@@ -103,13 +103,13 @@ public class FloorControl : MonoBehaviour
         }
     }
 
-    private void RemoveItem(Item item)
+    protected virtual void RemoveItem(Item item)
     {
         items.Remove(item);
         Destroy(item.gameObject);
     }
 
-    private bool CheckHit(Dush dushMan, Item item)
+    protected virtual bool CheckHit(Dush dushMan, Item item)
     {
         float man_left = dushMan.transform.position.x - dushMan.GetWidth() / 2;
         float man_right = dushMan.transform.position.x + dushMan.GetWidth() / 2;
@@ -130,8 +130,13 @@ public class FloorControl : MonoBehaviour
         return false;
     }
 
-    public float GetScreenWidth()
+    public virtual float GetScreenWidth()
     {
-        return floors[0].GetWidth();
+        return floors[0].GetScreenwWidth();
+    }
+
+    public virtual float GetScreenHeight()
+    {
+        return floors[0].GetScreenHeight();
     }
 }
