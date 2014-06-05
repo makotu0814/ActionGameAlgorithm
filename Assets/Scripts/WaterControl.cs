@@ -12,6 +12,8 @@ public class WaterControl : FloorControl {
         screenWidth = floorObj.GetScreenwWidth();
         screenHeight = floorObj.GetScreenHeight();
 
+        Debug.Log("screenWidth : " + screenWidth);
+
         // フロアを生成しない
         Destroy(floorObj.gameObject);
     }
