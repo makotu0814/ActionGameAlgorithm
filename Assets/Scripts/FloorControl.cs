@@ -109,7 +109,7 @@ public class FloorControl : MonoBehaviour
         Destroy(item.gameObject);
     }
 
-    protected virtual bool CheckHit(Dush dushMan, Item item)
+    public virtual bool CheckHit(Dush dushMan, Item item)
     {
         float man_left = dushMan.transform.position.x - dushMan.GetWidth() / 2;
         float man_right = dushMan.transform.position.x + dushMan.GetWidth() / 2;
